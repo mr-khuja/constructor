@@ -48,4 +48,9 @@ class User extends Authenticatable
         }
         return $role;
     }
+
+    public function logs()
+    {
+        return $this->hasMany('App\Models\Site\Log', 'user_id', 'id')->orderBy('id', 'DESC');
+    }
 }

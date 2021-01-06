@@ -54,13 +54,16 @@
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label for="created_at">Дата создания</label>
+                                @php($created = date('Y-m-d', strtotime($data->created_at)).'T'.date('H:i', strtotime($data->created_at)))
+                                @php($updated = date('Y-m-d', strtotime($data->updated_at)).'T'.date('H:i', strtotime($data->updated_at)))
+                                @php($template = date('Y-m-d').'T'.date('H:i'))
                                 <input id="created_at" name="created_at" type="datetime-local" class="form-control"
-                                       value="{{date('Y-m-d', strtotime($data->created_at)).'T'.date('H:i', strtotime($data->created_at))}}:00">
+                                       value="{{isset($data->created_at) ? $created : $template}}:00">
                             </div>
                             <div class="col-md-6 form-group">
                                 <label for="updated_at">Дата изменения</label>
                                 <input id="updated_at" name="updated_at" type="datetime-local" class="form-control"
-                                       value="{{date('Y-m-d', strtotime($data->updated_at)).'T'.date('H:i', strtotime($data->updated_at))}}:00">
+                                       value="{{isset($data->created_at) ? $updated : $template}}:00">
                             </div>
                         </div>
                         <div class="btn-list">

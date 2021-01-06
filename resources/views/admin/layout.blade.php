@@ -5,7 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Панель управления | {{$settings->sitename}}</title>
+    <title>
+        @php($array = explode('/', request()->path()))
+        @if(count($array) > 1)
+            {{isset(\Config::get('sidebar.menu')[$array[1]]['title']) ? \Config::get('sidebar.menu')[$array[1]]['title'] : \Config::get('sidebar.routes')[$array[1]]}}
+        @else
+            Главная
+        @endif
+        | Панель управления | {{$settings->sitename}}
+    </title>
     <link type="image/png" sizes="16x16" rel="shortcut icon" href="{{$settings->favicon}}">
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtremeadmin/"/>
     <link href="/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -39,7 +47,7 @@
                     @php($array = explode('/', request()->path()))
                     @if(count($array) == 2)
                         <li class="breadcrumb-item active">{{isset(\Config::get('sidebar.menu')[$array[1]]['title']) ? \Config::get('sidebar.menu')[$array[1]]['title'] : \Config::get('sidebar.routes')[$array[1]]}}</li>
-                    @else
+                    @elseif(count($array) > 2)
                         <li class="breadcrumb-item">
                             <a href="/admin/{{$array[1]}}">{{\Config::get('sidebar.menu')[$array[1]]['title']}}</a>
                         </li>

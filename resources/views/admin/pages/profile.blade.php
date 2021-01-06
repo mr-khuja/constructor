@@ -18,6 +18,8 @@
                 <div class="card-body">
                     <small class="text-muted">Email</small>
                     <h6>{{auth()->user()->email}}</h6>
+                    <small class="text-muted">Роль</small>
+                    <h6>{{auth()->user()->role()}}</h6>
                     <small class="text-muted">Зарегистрирован</small>
                     <h6>{{date('d.m.Y H:i', strtotime(auth()->user()->created_at))}}</h6>
                     <small class="text-muted">Изменен</small>
@@ -30,20 +32,26 @@
                 <div class="card-body">
                     <h4 class="card-title">Логи</h4>
                     <div class="profiletimeline mt-2">
-                        <div class="sl-item">
-                            <div class="sl-left">
-                                <img src="../assets/images/users/1.jpg" alt="user"
-                                                      class="rounded-circle">
-                            </div>
-                            <div class="sl-right">
-                                <div>
-                                    <a href="javascript:void(0)" class="link">John Doe</a>
-                                    <span class="sl-date">5 minutes ago</span>
-                                    <p>assign a new task <a href="javascript:void(0)"> Design weblayout</a></p>
+                        @php($actions = ['visit' => 'Просмотр','create' => 'Создание','edit' => 'Изменение','delete' => 'Удаление',])
+                        @foreach($logs as $log)
+                            <div class="sl-item">
+                                <div class="sl-left">
+                                    <img src="{{auth()->user()->image}}" alt="user"
+                                         class="rounded-circle">
+                                </div>
+                                <div class="sl-right">
+                                    <div>
+                                        <a href="javascript:void(0)" class="link">{{auth()->user()->name}}</a>
+                                        <span class="sl-date">{{$log->created_at->diffForHumans()}}</span>
+                                        <p>{{$actions[$log->action]}} <a
+                                                href="/admin/{{$log->url}}"> {{\Config::get('sidebar.menu')[$log->url]['title']}}</a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
+                            <hr>
+                        @endforeach
+                        {{$logs->links('vendor.pagination.default')}}
                     </div>
                 </div>
             </div>

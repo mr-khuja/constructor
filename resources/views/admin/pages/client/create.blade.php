@@ -5,18 +5,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Создание слайда</h4>
+                    <h4 class="card-title">Создание клиента</h4>
                     <form class="form-material mt-4" method="post" enctype="multipart/form-data"
-                          action="/admin/slider/create">
+                          action="/admin/client/create">
                         @csrf
                         <div class="form-group">
                             <label for="title">Название</label>
                             <input type="text" id="title" name="title" value="{{old('title')}}"
-                                   class="form-control form-control-line">
-                        </div>
-                        <div class="form-group">
-                            <label for="subtitle">Подзаголовок</label>
-                            <input type="text" id="subtitle" name="subtitle" value="{{old('subtitle')}}"
                                    class="form-control form-control-line">
                         </div>
                         <div class="form-group">
@@ -34,11 +29,6 @@
                             <div id="image_holder" style="margin-top:15px;max-height:100px;">
                                 <img alt="">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="path">Ссылка</label>
-                            <input type="text"  id="path" name="path" value="{{old('path')}}"
-                                   class="form-control form-control-line">
                         </div>
                         <div class="form-group">
                             <label for="order">Очередь</label>

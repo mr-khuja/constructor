@@ -5,18 +5,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Создание слайда</h4>
+                    <h4 class="card-title">Создание услуги</h4>
                     <form class="form-material mt-4" method="post" enctype="multipart/form-data"
-                          action="/admin/slider/create">
+                          action="/admin/service/create">
                         @csrf
                         <div class="form-group">
                             <label for="title">Название</label>
                             <input type="text" id="title" name="title" value="{{old('title')}}"
-                                   class="form-control form-control-line">
-                        </div>
-                        <div class="form-group">
-                            <label for="subtitle">Подзаголовок</label>
-                            <input type="text" id="subtitle" name="subtitle" value="{{old('subtitle')}}"
                                    class="form-control form-control-line">
                         </div>
                         <div class="form-group">
@@ -36,14 +31,26 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="path">Ссылка</label>
-                            <input type="text"  id="path" name="path" value="{{old('path')}}"
-                                   class="form-control form-control-line">
+                            <label for="short">Краткое описание</label>
+                            <textarea rows="3" id="short" name="short"
+                                      class="form-control form-control-line">{{old('short')}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="order">Очередь</label>
-                            <input type="number"  id="order" name="order" value="{{old('order')}}"
-                                   class="form-control form-control-line">
+                            <label for="body">Полное описание</label>
+                            <textarea rows="3" id="body" name="body"
+                                      class="form-control form-control-line">{!! old('body') !!}</textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="created_at">Дата создания</label>
+                                <input id="created_at" name="created_at" type="datetime-local" class="form-control"
+                                       value="{{date('Y-m-d').'T'.date('H:i')}}:00">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="updated_at">Дата изменения</label>
+                                <input id="updated_at" name="updated_at" type="datetime-local" class="form-control"
+                                       value="{{date('Y-m-d').'T'.date('H:i')}}:00">
+                            </div>
                         </div>
                         <div class="btn-list">
                             <button type="submit" class="btn waves-effect waves-light btn-success">Сохранить</button>
@@ -57,9 +64,17 @@
 
 @push('js')
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-
+    <script src="/js/ckeditor/ckeditor.js"></script>
 
     <script>
+        var options = {
+            removePlugins: 'easyimage, cloudservices',
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{ csrf_token() }}'
+        };
+        CKEDITOR.replace('body', options);
         $('#image').filemanager('image');
 
         function readURL(input) {

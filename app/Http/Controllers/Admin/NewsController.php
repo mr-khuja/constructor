@@ -45,7 +45,7 @@ class NewsController extends Controller
     {
         $data = News::where('trans_id', $id)->where('lang', $l)->first();
         if (!$data) {
-            $data = new Basic;
+            $data = new News;
         }
         if ($request->isMethod('post')) {
             $this->validate($request, $validation = [

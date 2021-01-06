@@ -5,18 +5,18 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Создание слайда</h4>
+                    <h4 class="card-title">Создание отзыва</h4>
                     <form class="form-material mt-4" method="post" enctype="multipart/form-data"
-                          action="/admin/slider/create">
+                          action="/admin/feedback/create">
                         @csrf
                         <div class="form-group">
-                            <label for="title">Название</label>
+                            <label for="title">Ф.И.О.</label>
                             <input type="text" id="title" name="title" value="{{old('title')}}"
                                    class="form-control form-control-line">
                         </div>
                         <div class="form-group">
-                            <label for="subtitle">Подзаголовок</label>
-                            <input type="text" id="subtitle" name="subtitle" value="{{old('subtitle')}}"
+                            <label for="position">Должность</label>
+                            <input type="text" id="position" name="position" value="{{old('position')}}"
                                    class="form-control form-control-line">
                         </div>
                         <div class="form-group">
@@ -36,13 +36,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="path">Ссылка</label>
-                            <input type="text"  id="path" name="path" value="{{old('path')}}"
-                                   class="form-control form-control-line">
+                            <label for="comment">Сообщение</label>
+                            <textarea id="comment" name="comment"
+                                      class="form-control form-control-line">{{old('comment')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="order">Очередь</label>
-                            <input type="number"  id="order" name="order" value="{{old('order')}}"
+                            <input type="number" id="order" name="order" value="{{old('order')}}"
                                    class="form-control form-control-line">
                         </div>
                         <div class="btn-list">

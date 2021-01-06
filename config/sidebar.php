@@ -31,13 +31,13 @@ return [
             'title' => 'Услуги',
             'icon' => 'mdi-book-open',
             'parent' => false,
-            'visible' => false
+            'visible' => true
         ],
         'category' => [
             'title' => 'Категории',
             'icon' => 'mdi-filter-outline',
             'parent' => false,
-            'visible' => false
+            'visible' => true
         ],
         'product' => [
             'title' => 'Продукты',
@@ -49,13 +49,13 @@ return [
             'title' => 'Клиенты',
             'icon' => 'mdi-human-greeting',
             'parent' => false,
-            'visible' => false
+            'visible' => true
         ],
         'feedback' => [
             'title' => 'Отзывы',
             'icon' => 'mdi-comment-account-outline',
             'parent' => false,
-            'visible' => false
+            'visible' => true
         ],
         'users' => [
             'title' => 'Пользователи',
@@ -65,6 +65,18 @@ return [
         ],
         'profile' => [
             'title' => 'Профиль',
+            'visible' => false
+        ],
+        'settings' => [
+            'title' => 'Настройки',
+            'visible' => false
+        ],
+        'home' => [
+            'title' => 'Главная',
+            'visible' => false
+        ],
+        'logout' => [
+            'title' => 'Выход',
             'visible' => false
         ],
     ],

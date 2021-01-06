@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Site\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -48,7 +49,8 @@ class PanelController extends Controller
 
     public function profile()
     {
-        return view('admin.pages.profile');
+        $logs = auth()->user()->logs()->paginate(5);
+        return view('admin.pages.profile')->withLogs($logs);
     }
 
     public function profile_edit(Request $request)
@@ -102,6 +104,12 @@ class PanelController extends Controller
         return redirect()->back()->with('message', 'Контакты успешно обовлены');
     }
 
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('home');
+    }
 
     public function save_image($image)
     {
