@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Content\Homepage;
 use App\Models\Site\Log;
 use App\Models\Site\Settings;
 use App\Models\User;
@@ -16,6 +17,50 @@ class PanelController extends Controller
     public function home()
     {
         return view('admin.pages.home');
+    }
+
+    public function homepage(Request $request, $l)
+    {
+        $data = Homepage::where('lang', $l)->first();
+        if (!$data) {
+            $data = new Homepage;
+        }
+        if ($request->isMethod('post')) {
+            $this->validate($request, $validation = [
+                'about_title' => 'nullable|string',
+                'about_text' => 'nullable|string',
+                'figures_title' => 'nullable|string',
+                'figures_text' => 'nullable|string',
+                'figures_title_first' => 'nullable|string',
+                'figures_value_first' => 'nullable|string',
+                'figures_title_second' => 'nullable|string',
+                'figures_value_second' => 'nullable|string',
+                'figures_title_third' => 'nullable|string',
+                'figures_value_third' => 'nullable|string',
+                'figures_title_fourth' => 'nullable|string',
+                'figures_value_fourth' => 'nullable|string',
+                'footer' => 'nullable|string',
+            ]);
+
+            $data->about_title = $request->about_title;
+            $data->about_text = $request->about_text;
+            $data->figures_title = $request->figures_title;
+            $data->figures_text = $request->figures_text;
+            $data->figures_title_first = $request->figures_title_first;
+            $data->figures_value_first = $request->figures_value_first;
+            $data->figures_title_second = $request->figures_title_second;
+            $data->figures_value_second = $request->figures_value_second;
+            $data->figures_title_third = $request->figures_title_third;
+            $data->figures_value_third = $request->figures_value_third;
+            $data->figures_title_fourth = $request->figures_title_fourth;
+            $data->figures_value_fourth = $request->figures_value_fourth;
+            $data->footer = $request->footer;
+            $data->lang = $l;
+            $data->save();
+
+            return redirect()->route('abasic')->with('message', 'Страница успешно создана');
+        }
+        return view('admin.pages.homepage')->withL($l)->withData($data);
     }
 
 

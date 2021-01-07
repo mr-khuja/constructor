@@ -19,6 +19,10 @@ class Sitesettings extends Migration
             $table->string('sitename_light');
             $table->string('logo');
             $table->string('favicon');
+            $table->string('phone');
+            $table->string('mobile');
+            $table->string('email');
+            $table->text('address');
             $table->timestamps();
         });
     }

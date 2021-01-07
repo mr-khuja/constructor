@@ -33,6 +33,7 @@ Route::group([
     Route::get('profile', 'Admin\PanelController@profile')->name('profile');
     Route::match(['get', 'post'], 'profile/edit', 'Admin\PanelController@profile_edit');
     Route::get('logout', 'Admin\PanelController@logout');
+    Route::match(['get', 'post'], 'homepage/edit/{lang}', 'Admin\PanelController@homepage');
     Route::group([
         'prefix' => 'menu'
     ], function () {

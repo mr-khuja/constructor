@@ -23,6 +23,21 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <tr>
+                                <td>#</td>
+                                <td>Главная страница</td>
+                                <td>
+                                    <button class="copytext btn btn-primary"
+                                            data-text="/"><i
+                                            class="mdi mdi-content-copy"></i></button>
+                                </td>
+                                <td>{{date('d.m.Y')}}</td>
+                                <td>
+                                    <a href="/admin/homepage/edit/ru"
+                                       class="btn btn-success waves-effect waves-light"><i
+                                            class="fas fa-edit"></i></a>
+                                </td>
+                            </tr>
                             @foreach($data as $item)
                                 <tr>
                                     <td>{{$item->id}}</td>

@@ -2,34 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d46ea84-ee1a-4231-8367-e21ab64eb9ca" name="Default Changelist" comment="git configured">
-      <change afterPath="$PROJECT_DIR$/app/Models/Site/Contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Site/Subscribe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_072241_contact_form__and__subscribe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/blocks/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/blocks/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/category.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/category_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/news.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/products.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/projects.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/service.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/slider.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/news.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/news_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/page.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/product.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/product_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/project.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/project_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/service.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/service_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Content/Homepage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_093718_homepage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/homepage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_24_075034_sitesettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_075034_sitesettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_25_101059_menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_25_101059_menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_28_112635_basicpages.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_28_112635_basicpages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/basic/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/basic/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,6 +210,7 @@
       <workItem from="1609957220500" duration="593000" />
       <workItem from="1609999200693" duration="6700000" />
       <workItem from="1610010718531" duration="138000" />
+      <workItem from="1610011942679" duration="3708000" />
     </task>
     <task id="LOCAL-00001" summary="git configured">
       <created>1609763066387</created>

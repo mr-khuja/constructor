@@ -81,6 +81,10 @@ return [
             'title' => 'Главная',
             'visible' => false
         ],
+        'homepage' => [
+            'title' => 'Главная страница',
+            'visible' => false
+        ],
         'logout' => [
             'title' => 'Выход',
             'visible' => false
