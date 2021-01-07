@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', 'HomeController@home')->name('home');
+Route::get('category/{id?}', 'HomeController@category')->name('category');
+Route::get('project/{slug?}', 'HomeController@project')->name('project');
+Route::get('product/{slug?}', 'HomeController@product')->name('product');
+Route::get('service/{slug?}', 'HomeController@service')->name('service');
+Route::get('news/{slug?}', 'HomeController@news')->name('news');
+Route::get('page/{slug}', 'HomeController@page')->name('page');
+Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
+Route::match(['get', 'post'], 'contact', 'HomeController@contact')->name('contact');
 
 Route::group([
     'prefix' => 'admin',

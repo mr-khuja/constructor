@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d46ea84-ee1a-4231-8367-e21ab64eb9ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Content/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Content/Project.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_06_121152_product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_060128_project.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profile/1609932173.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/product/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/product/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/product/list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/project/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/project/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/project/list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/logs.blade.php" afterDir="false" />
+    <list default="true" id="9d46ea84-ee1a-4231-8367-e21ab64eb9ca" name="Default Changelist" comment="git configured">
+      <change afterPath="$PROJECT_DIR$/app/Models/Site/Contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Site/Subscribe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_072241_contact_form__and__subscribe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blocks/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blocks/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/category.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/category_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/news.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/products.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/projects.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/service.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/slider.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/news.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/news_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/page.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/product.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/product_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/project.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/project_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/service.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/service_list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Content/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Content/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Content/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Content/Service.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/category/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/profile_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/profile_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +223,8 @@
       <workItem from="1609912555597" duration="3596000" />
       <workItem from="1609924821641" duration="10264000" />
       <workItem from="1609957220500" duration="593000" />
-      <workItem from="1609999200693" duration="2608000" />
+      <workItem from="1609999200693" duration="6700000" />
+      <workItem from="1610010718531" duration="138000" />
     </task>
     <task id="LOCAL-00001" summary="git configured">
       <created>1609763066387</created>
