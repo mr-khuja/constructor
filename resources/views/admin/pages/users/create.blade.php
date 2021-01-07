@@ -6,18 +6,18 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Настройки профиля</h4>
+                    <h4 class="card-title">Создание пользователя</h4>
                     <form class="form-material mt-4" method="post" enctype="multipart/form-data"
-                          action="/admin/profile/edit">
+                          action="/admin/users/create">
                         @csrf
                         <div class="form-group">
                             <label for="name">Имя</label>
-                            <input type="text" value="{{$data->name}}" id="name" name="name"
+                            <input type="text" id="name" name="name"
                                    class="form-control form-control-line">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="email" value="{{$data->email}}" id="email" name="email"
+                            <input type="email" id="email" name="email"
                                    class="form-control form-control-line">
                         </div>
                         <div class="form-group">
@@ -35,7 +35,15 @@
                                 <a href="#" class="input-group-addon btn btn-secondary fileinput-exists"
                                    data-dismiss="fileinput">Удалить</a>
                             </div>
-                            <img id="logo_id" class="mt-3 img-fluid w-25" src="{{$data->image}}" alt="Изображение">
+                            <img id="logo_id" class="mt-3 img-fluid w-25" alt="Изображение">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Роль</label>
+                            <select name="role" id="role" class="form-control form-control-line">
+                                <option value="0">Гость</option>
+                                <option value="1">Модератор</option>
+                                <option value="2">Админ</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="password">Новый пароль</label>

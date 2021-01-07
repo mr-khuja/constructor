@@ -93,10 +93,38 @@ Route::group([
         Route::get('delete/{id}', $name . 'delete');
     });
     Route::group([
+        'prefix' => 'project'
+    ], function () {
+        $name = 'Admin\ProjectController@';
+        Route::get('/', $name . 'list')->name('aproject');
+        Route::match(['get', 'post'], 'create', $name . 'create');
+        Route::match(['get', 'post'], 'edit/{id}/{lang}', $name . 'edit');
+        Route::get('delete/{id}', $name . 'delete');
+    });
+    Route::group([
+        'prefix' => 'product'
+    ], function () {
+        $name = 'Admin\ProductController@';
+        Route::get('/', $name . 'list')->name('aproduct');
+        Route::match(['get', 'post'], 'create', $name . 'create');
+        Route::match(['get', 'post'], 'edit/{id}/{lang}', $name . 'edit');
+        Route::get('delete/{id}', $name . 'delete');
+    });
+    Route::group([
         'prefix' => 'feedback'
     ], function () {
         $name = 'Admin\FeedbackController@';
         Route::get('/', $name . 'list')->name('afeedback');
+        Route::match(['get', 'post'], 'create', $name . 'create');
+        Route::match(['get', 'post'], 'edit/{id}', $name . 'edit');
+        Route::get('delete/{id}', $name . 'delete');
+    });
+    Route::group([
+        'prefix' => 'users'
+    ], function () {
+        $name = 'Admin\UsersController@';
+        Route::get('/', $name . 'list')->name('ausers');
+        Route::get('logs/{id}', $name . 'logs');
         Route::match(['get', 'post'], 'create', $name . 'create');
         Route::match(['get', 'post'], 'edit/{id}', $name . 'edit');
         Route::get('delete/{id}', $name . 'delete');

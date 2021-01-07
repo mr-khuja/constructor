@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Service extends Model
+class Product extends Model
 {
     use HasFactory, HasSlug;
 
-    protected $table = 'services';
+    protected $table = 'product';
     protected $guarded = [];
-
 
     public function getSlugOptions(): SlugOptions
     {
@@ -22,13 +21,13 @@ class Service extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function trans()
+    public function category()
     {
-        return $this->hasMany('App\Models\Content\Service', 'trans_id', 'id');
+        return $this->belongsTo('App\Models\Content\Category', 'category_id', 'id');
     }
 
-    public function projects()
+    public function trans()
     {
-        return $this->hasMany('App\Models\Content\Project', 'service_id', 'id');
+        return $this->hasMany('App\Models\Content\Product', 'trans_id', 'id');
     }
 }

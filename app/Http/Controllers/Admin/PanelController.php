@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Site\Log;
 use App\Models\Site\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class PanelController extends Controller
     {
         return view('admin.pages.home');
     }
+
 
     public function settings(Request $request)
     {

@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Content\Service;
+use App\Models\Content\Project;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class ProjectController extends Controller
 {
     public function list()
     {
-        $data = Service::where('lang', 'ru')->get();
-        return view('admin.pages.service.list')->withData($data);
+        $data = Project::where('lang', 'ru')->get();
+        return view('admin.pages.project.list')->withData($data);
     }
 
     public function create(Request $request)
@@ -22,12 +23,14 @@ class ServiceController extends Controller
                 'short' => 'nullable|string',
                 'image' => 'nullable|string',
                 'body' => 'required|string',
+                'service_id' => 'required|numeric',
             ]);
 
-            $data = new Service;
+            $data = new Project;
             $data->title = $request->title;
             $data->short = $request->short;
             $data->body = $request->body;
+            $data->service_id = $request->service_id;
             $data->image = $request->image;
             $data->created_at = $request->created_at;
             $data->updated_at = $request->updated_at;
@@ -36,16 +39,19 @@ class ServiceController extends Controller
             $data->trans_id = $data->id;
             $data->save();
 
-            return redirect()->route('aservice')->with('message', 'Услуга успешно создана');
+            return redirect()->route('aproject')->with('message', 'Проект успешно создан');
         }
-        return view('admin.pages.service.create');
+
+        $categories = Service::where('lang', 'ru')->get();
+
+        return view('admin.pages.project.create')->withCategories($categories);
     }
 
     public function edit(Request $request, $id, $l)
     {
-        $data = Service::where('trans_id', $id)->where('lang', $l)->first();
+        $data = Project::where('trans_id', $id)->where('lang', $l)->first();
         if (!$data) {
-            $data = new Service;
+            $data = new Project;
         }
         if ($request->isMethod('post')) {
             $this->validate($request, $validation = [
@@ -53,11 +59,13 @@ class ServiceController extends Controller
                 'short' => 'nullable|string',
                 'image' => 'nullable|string',
                 'body' => 'required|string',
+                'service_id' => 'required|numeric',
             ]);
 
             $data->title = $request->title;
             $data->short = $request->short;
             $data->body = $request->body;
+            $data->service_id = $request->service_id;
             $data->created_at = $request->created_at;
             $data->updated_at = $request->updated_at;
             $data->image = $request->image;
@@ -65,18 +73,17 @@ class ServiceController extends Controller
             $data->trans_id = $id;
             $data->save();
 
-            return redirect()->route('aservice')->with('message', 'Услуга успешно изменена');
+            return redirect()->route('aproject')->with('message', 'Проект успешно изменен');
         }
-        return view('admin.pages.service.edit')->withL($l)->withId($id)->withData($data);
+
+        $categories = Service::where('lang', 'ru')->get();
+
+        return view('admin.pages.project.edit')->withL($l)->withId($id)->withData($data)->withCategories($categories);
     }
 
     public function delete($id)
     {
-        $data = Service::find($id);
-        foreach ($data->projects as $item) {
-            $item->service_id = NULL;
-            $item->save();
-        }
+        $data = Project::find($id);
         foreach ($data->trans as $item) {
             if ($item->trans_id != $item->id) {
                 $item->delete();
@@ -86,6 +93,6 @@ class ServiceController extends Controller
         $data->save();
         $data->delete();
 
-        return redirect()->back()->with('message', 'Услуга успешно удалена');
+        return redirect()->back()->with('message', 'Проект успешно удален');
     }
 }

@@ -27,12 +27,6 @@ return [
             'parent' => false,
             'visible' => true
         ],
-        'service' => [
-            'title' => 'Услуги',
-            'icon' => 'mdi-book-open',
-            'parent' => false,
-            'visible' => true
-        ],
         'category' => [
             'title' => 'Категории',
             'icon' => 'mdi-filter-outline',
@@ -43,7 +37,19 @@ return [
             'title' => 'Продукты',
             'icon' => 'mdi-cart',
             'parent' => false,
-            'visible' => false
+            'visible' => true
+        ],
+        'service' => [
+            'title' => 'Услуги',
+            'icon' => 'mdi-book-open',
+            'parent' => false,
+            'visible' => true
+        ],
+        'project' => [
+            'title' => 'Проекты',
+            'icon' => 'mdi-presentation',
+            'parent' => false,
+            'visible' => true
         ],
         'client' => [
             'title' => 'Клиенты',
@@ -61,7 +67,7 @@ return [
             'title' => 'Пользователи',
             'icon' => 'mdi-human-male-female',
             'parent' => false,
-            'visible' => false
+            'visible' => true
         ],
         'profile' => [
             'title' => 'Профиль',

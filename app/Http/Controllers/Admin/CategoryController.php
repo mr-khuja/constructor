@@ -83,11 +83,9 @@ class CategoryController extends Controller
         if ($request->isMethod('post')) {
             $this->validate($request, $validation = [
                 'title' => 'required|string',
-                'path' => 'required|string',
             ]);
 
             $data = new Category;
-            $data->path = $request->path;
             $data->title = $request->title;
             $data->lang = 'ru';
             $data->order = 0;
@@ -110,10 +108,8 @@ class CategoryController extends Controller
         if ($request->isMethod('post')) {
             $this->validate($request, $validation = [
                 'title' => 'required|string',
-                'path' => 'required|string',
             ]);
 
-            $data->path = $request->path;
             $data->title = $request->title;
             $data->lang = $l;
             $data->parent_id = $parent->parent_id;
@@ -138,6 +134,10 @@ class CategoryController extends Controller
         $data = Category::find($id);
         foreach ($data->children as $item) {
             $item->parent_id = NULL;
+            $item->save();
+        }
+        foreach ($data->products as $item) {
+            $item->category_id = NULL;
             $item->save();
         }
         foreach ($data->trans as $item) {

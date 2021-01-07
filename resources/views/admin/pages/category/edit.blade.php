@@ -26,11 +26,6 @@
                             <input type="text" id="title" name="title" value="{{$data->title}}"
                                    class="form-control form-control-line">
                         </div>
-                        <div class="form-group">
-                            <label for="path">Ссылка</label>
-                            <input type="text" id="path" name="path" value="{{$data->path}}"
-                                   class="form-control form-control-line">
-                        </div>
                         <div class="btn-list">
                             <button type="submit" class="btn waves-effect waves-light btn-success">Сохранить</button>
                         </div>

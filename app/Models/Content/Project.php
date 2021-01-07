@@ -4,16 +4,15 @@ namespace App\Models\Content;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Sluggable\HasSlug;
 
-class Service extends Model
+class Project extends Model
 {
     use HasFactory, HasSlug;
 
-    protected $table = 'services';
+    protected $table = 'project';
     protected $guarded = [];
-
 
     public function getSlugOptions(): SlugOptions
     {
@@ -22,13 +21,13 @@ class Service extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function trans()
+    public function service()
     {
-        return $this->hasMany('App\Models\Content\Service', 'trans_id', 'id');
+        return $this->belongsTo('App\Models\Content\Service', 'service_id', 'id');
     }
 
-    public function projects()
+    public function trans()
     {
-        return $this->hasMany('App\Models\Content\Project', 'service_id', 'id');
+        return $this->hasMany('App\Models\Content\Project', 'trans_id', 'id');
     }
 }

@@ -54,6 +54,9 @@
                         @if($array[2] == 'edit')
 
                             <li class="breadcrumb-item active">Изменение</li>
+                        @elseif($array[2] == 'logs')
+
+                            <li class="breadcrumb-item active">Логи</li>
                         @else
 
                             <li class="breadcrumb-item active">Создание</li>

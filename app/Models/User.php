@@ -43,7 +43,7 @@ class User extends Authenticatable
             $role = 'Гость';
         } elseif ($this->role == 1) {
             $role = 'Модератор';
-        } elseif ($this->role == 0) {
+        } elseif ($this->role == 2) {
             $role = 'Администратор';
         }
         return $role;
