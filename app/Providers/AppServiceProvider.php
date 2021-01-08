@@ -2,8 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Site\Seo;
+use App\Models\Site\SeoDefault;
 use App\Models\Site\Settings;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -27,6 +31,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        view()->composer('*', function () {
+            $lang = App::getLocale();
+            $data = Seo::where('url', Request::url())->where('lang', $lang)->first();
+            $def = SeoDefault::where('lang', $lang)->first();
+            if (!$def) {
+                $def = new SeoDefault;
+            }
+            View::share('title', isset($data->title) ? $data->title : $def->title);
+            View::share('description', isset($data->description) ? $data->description : $def->description);
+            View::share('keywords', isset($data->keywords) ? $data->keywords : $def->keywords);
+
+        });
+
         $sets = Settings::first();
         View::share('settings', $sets);
 

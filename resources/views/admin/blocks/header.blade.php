@@ -28,16 +28,16 @@
                         <i class="ti-menu"></i>
                     </a>
                 </li>
-                <li class="nav-item d-none d-md-block search-box">
-                    <a class="nav-link d-none d-md-block waves-effect waves-dark" href="javascript:void(0)">
-                        <i class="ti-search"></i>
-                    </a>
-                    <form method="post" action="/admin/search" class="app-search">
-                        @csrf
-                        <input type="text" class="form-control" placeholder="Поиск">
-                        <a class="srh-btn"><i class="ti-close"></i></a>
-                    </form>
-                </li>
+{{--                <li class="nav-item d-none d-md-block search-box">--}}
+{{--                    <a class="nav-link d-none d-md-block waves-effect waves-dark" href="javascript:void(0)">--}}
+{{--                        <i class="ti-search"></i>--}}
+{{--                    </a>--}}
+{{--                    <form method="post" action="/admin/search" class="app-search">--}}
+{{--                        @csrf--}}
+{{--                        <input type="text" class="form-control" placeholder="Поиск">--}}
+{{--                        <a class="srh-btn"><i class="ti-close"></i></a>--}}
+{{--                    </form>--}}
+{{--                </li>--}}
             </ul>
             <ul class="navbar-nav float-right">
                 <li class="nav-item dropdown">

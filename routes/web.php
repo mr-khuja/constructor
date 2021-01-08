@@ -21,7 +21,9 @@ Route::get('service/{slug?}', 'HomeController@service')->name('service');
 Route::get('news/{slug?}', 'HomeController@news')->name('news');
 Route::get('page/{slug}', 'HomeController@page')->name('page');
 Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
+Route::post('seo', 'HomeController@seo')->name('seo');
 Route::match(['get', 'post'], 'contact', 'HomeController@contact')->name('contact');
+Route::get('setlocale/{locale}', 'HomeController@language')->name('lang');
 
 Route::group([
     'prefix' => 'admin',
@@ -30,6 +32,9 @@ Route::group([
     Route::get('/', 'Admin\PanelController@home');
     Route::post('contact', 'Admin\PanelController@contact');
     Route::match(['get', 'post'], 'settings', 'Admin\PanelController@settings');
+    Route::get('seo/{lang}', 'Admin\PanelController@seosocial');
+    Route::post('seo/edit/{lang}', 'Admin\PanelController@seo');
+    Route::post('social/edit', 'Admin\PanelController@social');
     Route::get('profile', 'Admin\PanelController@profile')->name('profile');
     Route::match(['get', 'post'], 'profile/edit', 'Admin\PanelController@profile_edit');
     Route::get('logout', 'Admin\PanelController@logout');

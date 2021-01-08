@@ -46,7 +46,8 @@
     </div>
     <div class="sidebar-footer">
         <a href="/admin/settings" class="link" data-toggle="tooltip" title="Настройки"><i class="ti-settings"></i></a>
-        <a href="/admin/profile" class="link" data-toggle="tooltip" title="Профиль"><i class="ti-user"></i></a>
+        <a href="/admin/seo/ru" class="link" data-toggle="tooltip" title="SEO и Соц. сети"><i
+                class=" fas fa-globe"></i></a>
         <a href="/admin/logout" class="link" data-toggle="tooltip" title="Выйти"><i class="mdi mdi-power"></i></a>
     </div>
 </aside>

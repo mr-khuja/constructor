@@ -81,7 +81,7 @@ return [
     */
 
     'locale' => 'ru',
-    'locales' => ['ru', 'en', 'uz'],
+    'locales' => ['ru', 'en', 'uz', 'uzc'],
     'locales_text' => ['ru' => 'Русский', 'en' => 'English', 'uz' => 'O\'zbekcha', 'uzc' => 'Ўзбекча'],
 
     /*

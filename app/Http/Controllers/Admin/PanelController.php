@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Content\Homepage;
 use App\Models\Site\Log;
+use App\Models\Site\SeoDefault;
 use App\Models\Site\Settings;
+use App\Models\Site\Social;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,6 +63,64 @@ class PanelController extends Controller
             return redirect()->route('abasic')->with('message', 'Страница успешно создана');
         }
         return view('admin.pages.homepage')->withL($l)->withData($data);
+    }
+
+    public function seosocial($l)
+    {
+        $data = SeoDefault::where('lang', $l)->first();
+        if (!$data) {
+            $data = new SeoDefault;
+        }
+        $socs = Social::first();
+        if (!$socs) {
+            $socs = new Social;
+        }
+        return view('admin.pages.seo')->withL($l)->withData($data)->withSocs($socs);
+    }
+
+    public function seo(Request $request, $l)
+    {
+        $this->validate($request, $validation = [
+            'title' => 'nullable|string',
+            'description' => 'nullable|string',
+            'keywords' => 'nullable|string',
+        ]);
+
+        $data = SeoDefault::where('lang', $l)->first();
+        if (!$data) {
+            $data = new SeoDefault;
+        }
+        $data->lang = $l;
+        $data->title = $request->title;
+        $data->description = $request->description;
+        $data->keywords = $request->keywords;
+        $data->save();
+
+        return redirect()->back()->withMessage('Настройки SEO успешно обновлены');
+    }
+
+    public function social(Request $request)
+    {
+        $this->validate($request, $validation = [
+            'facebook' => 'nullable|string',
+            'telegram' => 'nullable|string',
+            'youtube' => 'nullable|string',
+            'instagram' => 'nullable|string',
+            'twitter' => 'nullable|string',
+        ]);
+
+        $data = Social::first();
+        if (!$data) {
+            $data = new Social;
+        }
+        $data->facebook = $request->facebook;
+        $data->telegram = $request->telegram;
+        $data->youtube = $request->youtube;
+        $data->instagram = $request->instagram;
+        $data->twitter = $request->twitter;
+        $data->save();
+
+        return redirect()->back()->withMessage('Настройки соц. сетей успешно обновлены');
     }
 
 

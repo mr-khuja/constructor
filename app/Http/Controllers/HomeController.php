@@ -9,9 +9,11 @@ use App\Models\Content\Product;
 use App\Models\Content\Project;
 use App\Models\Content\Service;
 use App\Models\Site\Contact;
+use App\Models\Site\Seo;
 use App\Models\Site\Subscribe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -165,5 +167,38 @@ class HomeController extends Controller
         $data->save();
 
         return redirect()->back()->withMessage('Вы успешно подписались на новости');
+    }
+
+    public function seo(Request $request)
+    {
+        $validation = [
+            'title' => 'required|string',
+            'keywords' => 'required|string',
+            'description' => 'required|string',
+            'url' => 'required|string',
+            'lang' => 'required|string',
+        ];
+        $this->validate($request, $validation);
+
+        $data = new Seo;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->url = $request->url;
+        $data->lang = $request->lang;
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function language($locale)
+    {
+        if (in_array($locale, \Config::get('app.locales'))) {
+            Session::put('locale', $locale);
+        } else {
+            $lang = app()->getLocale();
+            Session::put('locale', $lang);
+        }
+        return redirect()->back();
     }
 }

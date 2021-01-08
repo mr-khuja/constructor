@@ -85,6 +85,10 @@ return [
             'title' => 'Главная страница',
             'visible' => false
         ],
+        'seo' => [
+            'title' => 'SEO и соц. сети',
+            'visible' => false
+        ],
         'logout' => [
             'title' => 'Выход',
             'visible' => false
