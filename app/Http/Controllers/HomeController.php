@@ -145,6 +145,7 @@ class HomeController extends Controller
                 'email' => 'required|string',
                 'phone' => 'required|string',
                 'message' => 'required|string',
+                'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
             ]);
 
             $data = new Contact;
@@ -164,6 +165,7 @@ class HomeController extends Controller
         $this->validate($request, $validation = [
             'name' => 'required|string',
             'phone' => 'required|string',
+            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
         ]);
 
         $data = new Callme;
@@ -178,6 +180,7 @@ class HomeController extends Controller
     {
         $this->validate($request, $validation = [
             'email' => 'required|string',
+            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
         ]);
 
         $data = new Subscribe;

@@ -15,6 +15,7 @@
         <link href="/css/admin.css" rel="stylesheet">
     @endauth
     @stack('css')
+    {!! RecaptchaV3::initJs() !!}
 </head>
 <body>
 @auth
@@ -50,5 +51,6 @@
         });
     </script>
 @endforeach
+{!! RecaptchaV3::field('register') !!}
 </body>
 </html>
