@@ -8,6 +8,7 @@ use App\Models\Content\News;
 use App\Models\Content\Product;
 use App\Models\Content\Project;
 use App\Models\Content\Service;
+use App\Models\Site\Callme;
 use App\Models\Site\Contact;
 use App\Models\Site\Seo;
 use App\Models\Site\Subscribe;
@@ -142,11 +143,13 @@ class HomeController extends Controller
             $this->validate($request, $validation = [
                 'name' => 'required|string',
                 'email' => 'required|string',
+                'phone' => 'required|string',
                 'message' => 'required|string',
             ]);
 
             $data = new Contact;
             $data->name = $request->name;
+            $data->phone = $request->phone;
             $data->email = $request->email;
             $data->message = $request->message;
             $data->save();
@@ -154,6 +157,21 @@ class HomeController extends Controller
             return redirect()->back()->withMessage('Ваше сообщение успешно отправлено');
         }
         return view('pages.contact');
+    }
+
+    public function callme(Request $request)
+    {
+        $this->validate($request, $validation = [
+            'name' => 'required|string',
+            'phone' => 'required|string',
+        ]);
+
+        $data = new Callme;
+        $data->name = $request->name;
+        $data->phone = $request->phone;
+        $data->save();
+
+        return redirect()->back()->withMessage('Ваша заявка успешно принята, ожидайте звонка');
     }
 
     public function subscribe(Request $request)

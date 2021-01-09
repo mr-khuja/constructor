@@ -63,6 +63,18 @@ return [
             'parent' => false,
             'visible' => true
         ],
+        'contacts' => [
+            'title' => 'Контактная форма',
+            'icon' => 'mdi-checkbox-multiple-marked-outline',
+            'parent' => false,
+            'visible' => true
+        ],
+        'callme' => [
+            'title' => 'Заявки на звонок',
+            'icon' => 'mdi-cellphone-iphone',
+            'parent' => false,
+            'visible' => true
+        ],
         'users' => [
             'title' => 'Пользователи',
             'icon' => 'mdi-human-male-female',

@@ -23,6 +23,7 @@ Route::get('page/{slug}', 'HomeController@page')->name('page');
 Route::post('subscribe', 'HomeController@subscribe')->name('subscribe');
 Route::post('seo', 'HomeController@seo')->name('seo');
 Route::match(['get', 'post'], 'contact', 'HomeController@contact')->name('contact');
+Route::post('callme', 'HomeController@callme')->name('callme');
 Route::get('setlocale/{locale}', 'HomeController@language')->name('lang');
 
 Route::group([
@@ -38,6 +39,8 @@ Route::group([
     Route::get('profile', 'Admin\PanelController@profile')->name('profile');
     Route::match(['get', 'post'], 'profile/edit', 'Admin\PanelController@profile_edit');
     Route::get('logout', 'Admin\PanelController@logout');
+    Route::get('callme', 'Admin\PanelController@callme');
+    Route::get('contacts', 'Admin\PanelController@contacts');
     Route::match(['get', 'post'], 'homepage/edit/{lang}', 'Admin\PanelController@homepage');
     Route::group([
         'prefix' => 'menu'

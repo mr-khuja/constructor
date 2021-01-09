@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Content\Homepage;
+use App\Models\Site\Callme;
+use App\Models\Site\Contact;
 use App\Models\Site\Log;
 use App\Models\Site\SeoDefault;
 use App\Models\Site\Settings;
@@ -209,6 +211,18 @@ class PanelController extends Controller
         $data->save();
 
         return redirect()->back()->with('message', 'Контакты успешно обовлены');
+    }
+
+    public function contacts()
+    {
+        $data = Contact::orderBy('created_at', 'DESC')->get();
+        return view('admin.pages.contacts')->withData($data);
+    }
+
+    public function callme()
+    {
+        $data = Callme::orderBy('created_at', 'DESC')->get();
+        return view('admin.pages.callme')->withData($data);
     }
 
 
